@@ -1,10 +1,15 @@
-<p>Kamppi Route</p>
+<p>Kilonkartano Route</p>
 
 <ul>
   <li *ngFor="let stop of stopArray">
-    <p>{{stop.name}}</p>
-    <p>{{stop.patterns[0].route.longName}}</p>
-    <p>{{stop.patterns[0].route.shortName}}</p>
-    <p *ngIf="stop.patterns[0].directionId === 0"> ----- Departing -----</p>
+    <h3>{{stop.name}}</h3>
+    <ul>
+      <li *ngFor="let line of stop.patterns">
+        <p>{{line.route.shortName}}</p>
+        <p>{{line.route.longName}}</p>
+        <p *ngIf="line.directionId === 0"> ----- Departing -----</p>
+        <p *ngIf="line.directionId === 1"> ----- Coming -----</p>
+      </li>
+    </ul>
   </li>
 </ul>

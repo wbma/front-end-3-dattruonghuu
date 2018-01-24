@@ -14,7 +14,7 @@ export class ListMediaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.digitransitservice.getRoutes('kamppi').subscribe(response => {
+    this.digitransitservice.getRoutes('kilonkartano').subscribe(response => {
       // console.log(response.data.stops);
       console.log(response['data'].stops);
       this.stopArray = response['data'].stops;
